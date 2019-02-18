@@ -2,7 +2,9 @@ package com.codepath.apps.restclienttemplate.models;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
+@Parcel
 public class Tweet {
 
     public String body;
@@ -10,6 +12,10 @@ public class Tweet {
     public String createdAt;
     public User user;
 
+
+    // empty constructor needed by the Parceler library
+    public Tweet() {
+    }
     public static Tweet fromjson(JSONObject jsonObject) throws JSONException {
         Tweet tweet = new Tweet();
         tweet.body = jsonObject.getString("text");
